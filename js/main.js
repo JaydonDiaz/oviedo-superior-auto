@@ -211,35 +211,99 @@ if (ticketList) {
 }
 
 /* ============================================================
-   WHAT WE SERVICE — pinned horizontal scroll
+   WHAT WE SERVICE — bay board selector
+   A shop bay-status-board: click a bay or let it auto-advance,
+   and the stage crossfades to what's "in" that bay. The active
+   tab's progress rail is the same GSAP tween driving the
+   auto-advance timer, so they can never drift out of sync.
    ============================================================ */
-function initVehiclesScroll() {
-  const track = document.getElementById("vehicles-track");
-  const pin = track ? track.closest(".vehicles-pin") : null;
-  if (!track || !pin) return;
+const BAYS = [
+  { icon: "icon-car", accent: "green", name: "Domestic Cars & Trucks", desc: "Ford, Chevy, Dodge, and more — serviced to the manufacturer's own spec sheet." },
+  { icon: "icon-globe", accent: "steel", name: "Foreign & Import", desc: "Honda, Toyota, BMW, VW, and other imports — the same factory-level care, no dealer markup." },
+  { icon: "icon-truck", accent: "green", name: "Commercial & Fleet", desc: "Work trucks and small fleets kept on the road with scheduled, documented maintenance." },
+  { icon: "icon-disc", accent: "steel", name: "Brakes & Suspension", desc: "Pads, rotors, shocks, and struts — the parts that decide how a vehicle actually feels to drive." },
+  { icon: "icon-gear", accent: "green", name: "Transmission & Drivetrain", desc: "Automatic and manual transmissions, clutches, and drivetrain components, diagnosed right." },
+  { icon: "icon-clipboard", accent: "steel", name: "Factory Maintenance", desc: "Scheduled maintenance intervals done to spec, so your warranty stays intact." }
+];
 
-  const mm = gsap.matchMedia();
-  mm.add("(min-width: 701px)", () => {
-    // Measured as functions (not plain numbers) so invalidateOnRefresh
-    // actually re-measures scrollWidth on every refresh, instead of
-    // permanently baking in whatever the width happened to be at setup.
-    const getDistance = () => Math.max(0, track.scrollWidth - window.innerWidth);
-    const tween = gsap.to(track, {
-      x: () => -getDistance(),
-      ease: "none",
-      scrollTrigger: {
-        trigger: pin,
-        start: "top top",
-        end: () => "+=" + (getDistance() + window.innerHeight * 0.6),
-        scrub: 0.6,
-        pin: true,
-        invalidateOnRefresh: true
-      }
+function initBayBoard() {
+  const tabsEl = document.getElementById("bay-tabs");
+  const panelEl = document.getElementById("bay-panel");
+  if (!tabsEl || !panelEl) return;
+
+  tabsEl.innerHTML = BAYS.map((bay, i) => `
+    <button class="bay-tab${i === 0 ? " is-active" : ""}" data-bay="${i}" type="button" style="--bay-accent:var(--${bay.accent});">
+      <span class="bay-tab-index">${String(i + 1).padStart(2, "0")}</span>
+      <span class="bay-tab-name">${bay.name}</span>
+      <span class="bay-tab-progress"></span>
+    </button>
+  `).join("");
+
+  function renderPanel(i) {
+    const bay = BAYS[i];
+    panelEl.style.setProperty("--bay-accent", `var(--${bay.accent})`);
+    panelEl.innerHTML = `
+      <div class="bay-panel-icon"><svg width="26" height="26"><use href="#${bay.icon}"/></svg></div>
+      <p class="bay-panel-index">Bay ${String(i + 1).padStart(2, "0")} / 06</p>
+      <h3>${bay.name}</h3>
+      <p>${bay.desc}</p>
+      <div class="bay-panel-bars"><span></span><span></span><span></span><span></span><span></span></div>
+    `;
+  }
+  renderPanel(0);
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let active = 0;
+  let cycle = null;
+
+  function goToBay(i, userInitiated) {
+    if (i === active && !userInitiated) return;
+    active = i;
+    tabsEl.querySelectorAll(".bay-tab").forEach((tab, idx) => {
+      tab.classList.toggle("is-active", idx === i);
+      if (idx !== i) gsap.set(tab.querySelector(".bay-tab-progress"), { scaleX: 0 });
     });
-    return () => tween.scrollTrigger && tween.scrollTrigger.kill();
+
+    if (reduceMotion) {
+      renderPanel(i);
+    } else {
+      gsap.to(panelEl, {
+        opacity: 0, y: 8, duration: 0.2, ease: "power2.in",
+        onComplete: () => {
+          renderPanel(i);
+          gsap.fromTo(panelEl, { opacity: 0, y: -8 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" });
+        }
+      });
+    }
+    startCycle();
+  }
+
+  function startCycle() {
+    if (reduceMotion) return;
+    if (cycle) cycle.kill();
+    const progressBar = tabsEl.querySelectorAll(".bay-tab-progress")[active];
+    gsap.set(progressBar, { scaleX: 0 });
+    cycle = gsap.to(progressBar, {
+      scaleX: 1,
+      duration: 4.5,
+      ease: "none",
+      onComplete: () => goToBay((active + 1) % BAYS.length, false)
+    });
+  }
+
+  tabsEl.addEventListener("click", (e) => {
+    const tab = e.target.closest(".bay-tab");
+    if (!tab) return;
+    goToBay(Number(tab.getAttribute("data-bay")), true);
   });
+
+  const board = tabsEl.closest(".bay-board");
+  board.addEventListener("mouseenter", () => cycle && cycle.pause());
+  board.addEventListener("mouseleave", () => cycle && cycle.resume());
+
+  startCycle();
 }
-initVehiclesScroll();
+initBayBoard();
 
 /* ============================================================
    VISIT: HOURS + "OPEN NOW" STATUS

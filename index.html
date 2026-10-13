@@ -79,6 +79,12 @@
   <symbol id="icon-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M20.59 13.41 11 4H4v7l9.59 9.59a2 2 0 0 0 2.82 0l4.18-4.18a2 2 0 0 0 0-2.82z"/><circle cx="8" cy="8" r="1.2"/>
   </symbol>
+  <symbol id="icon-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 13l1.6-4.8A2 2 0 0 1 6.5 7h11a2 2 0 0 1 1.9 1.2L21 13"/><path d="M3 13h18v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="7.5" cy="13" r="1.5"/><circle cx="16.5" cy="13" r="1.5"/>
+  </symbol>
+  <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/>
+  </symbol>
 </svg>
 
 <!-- ===== NAV ===== -->
@@ -266,49 +272,17 @@
     </div>
   </section>
 
-  <!-- ===== WHAT WE SERVICE (pinned horizontal scroll) ===== -->
-  <section class="vehicles-section" id="vehicles">
-    <div class="container vehicles-head reveal-up">
-      <p class="eyebrow">What We Service</p>
-      <h2 class="section-title">Six kinds of vehicles,<br>one honest shop.</h2>
-    </div>
-    <div class="vehicles-pin">
-      <div class="vehicles-track" id="vehicles-track">
-        <div class="plate-card" style="--pc-accent:var(--green);">
-          <span class="plate-index">01</span>
-          <h3>Domestic Cars &amp; Trucks</h3>
-          <p>Ford, Chevy, Dodge, and more — serviced to the manufacturer's own spec sheet.</p>
-          <div class="plate-bars"><span></span><span></span><span></span><span></span><span></span></div>
-        </div>
-        <div class="plate-card" style="--pc-accent:var(--steel);">
-          <span class="plate-index">02</span>
-          <h3>Foreign &amp; Import</h3>
-          <p>Honda, Toyota, BMW, VW, and other imports — the same factory-level care, no dealer markup.</p>
-          <div class="plate-bars"><span></span><span></span><span></span><span></span><span></span></div>
-        </div>
-        <div class="plate-card" style="--pc-accent:var(--green);">
-          <span class="plate-index">03</span>
-          <h3>Commercial &amp; Fleet</h3>
-          <p>Work trucks and small fleets kept on the road with scheduled, documented maintenance.</p>
-          <div class="plate-bars"><span></span><span></span><span></span><span></span><span></span></div>
-        </div>
-        <div class="plate-card" style="--pc-accent:var(--steel);">
-          <span class="plate-index">04</span>
-          <h3>Brakes &amp; Suspension</h3>
-          <p>Pads, rotors, shocks, and struts — the parts that decide how a vehicle actually feels to drive.</p>
-          <div class="plate-bars"><span></span><span></span><span></span><span></span><span></span></div>
-        </div>
-        <div class="plate-card" style="--pc-accent:var(--green);">
-          <span class="plate-index">05</span>
-          <h3>Transmission &amp; Drivetrain</h3>
-          <p>Automatic and manual transmissions, clutches, and drivetrain components, diagnosed right.</p>
-          <div class="plate-bars"><span></span><span></span><span></span><span></span><span></span></div>
-        </div>
-        <div class="plate-card" style="--pc-accent:var(--steel);">
-          <span class="plate-index">06</span>
-          <h3>Factory Maintenance</h3>
-          <p>Scheduled maintenance intervals done to spec, so your warranty stays intact.</p>
-          <div class="plate-bars"><span></span><span></span><span></span><span></span><span></span></div>
+  <!-- ===== WHAT WE SERVICE (bay board selector) ===== -->
+  <section class="section-padding" id="vehicles">
+    <div class="container">
+      <div class="section-header center reveal-up">
+        <p class="eyebrow">What We Service</p>
+        <h2 class="section-title">Six kinds of vehicles,<br>one honest shop.</h2>
+      </div>
+      <div class="bay-board reveal-up">
+        <div class="bay-tabs" id="bay-tabs"></div>
+        <div class="bay-stage">
+          <div class="bay-panel" id="bay-panel"></div>
         </div>
       </div>
     </div>

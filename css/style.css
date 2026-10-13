@@ -395,42 +395,67 @@ html[data-theme="light"] .theme-toggle-mobile .theme-label-light { display: inli
 @media (max-width: 560px) { .service-grid { grid-template-columns: 1fr; } }
 
 /* ============================================================
-   WHAT WE SERVICE (pinned horizontal scroll)
+   WHAT WE SERVICE (bay board selector)
+   A shop bay-status-board device, not a scroll-jacked carousel:
+   click a bay (or let it auto-advance) and the stage crossfades
+   to what's "in" that bay. The active tab's progress rail shows
+   how long until it advances on its own.
    ============================================================ */
-.vehicles-section { padding: 100px 0 0; }
-.vehicles-head { text-align: center; margin-bottom: 8px; }
-.vehicles-pin { height: 100vh; position: relative; overflow: hidden; }
-.vehicles-track {
-  position: absolute; top: 0; left: 0; height: 100%;
-  display: flex; align-items: center; gap: 32px;
-  padding: 0 max(28px, calc((100vw - 1320px) / 2 + 28px));
-  will-change: transform;
+.bay-board { max-width: 860px; margin: 0 auto; }
+.bay-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 28px; }
+.bay-tab {
+  position: relative;
+  display: flex; align-items: center; gap: 9px;
+  padding: 11px 18px 13px;
+  border-radius: 999px;
+  background: var(--paper-2);
+  border: 1px solid var(--border-2);
+  font-family: var(--font-mono);
+  font-size: 12.5px; font-weight: 600; color: var(--ink-faint);
+  overflow: hidden;
+  transition: color var(--ease), border-color var(--ease);
 }
-.plate-card {
-  flex-shrink: 0; width: min(380px, 82vw); height: 62vh; max-height: 480px;
+.bay-tab-index { font-weight: 700; color: var(--bay-accent, var(--green)); }
+.bay-tab:hover { color: var(--ink); }
+.bay-tab.is-active { color: var(--ink); border-color: var(--bay-accent, var(--green)); }
+.bay-tab-progress {
+  position: absolute; left: 0; bottom: 0; height: 2.5px; width: 100%;
+  background: var(--bay-accent, var(--green));
+  transform: scaleX(0); transform-origin: left;
+}
+
+.bay-stage {
   background: var(--paper-2);
   border: 1px solid var(--border);
-  border-top: 6px solid var(--pc-accent, var(--green));
   border-radius: var(--radius-lg);
-  padding: 36px 32px;
-  display: flex; flex-direction: column;
   box-shadow: 0 24px 50px var(--shadow);
+  min-height: 320px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 44px 32px;
 }
-.plate-index { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--pc-accent, var(--green)); letter-spacing: 0.08em; margin-bottom: 18px; }
-.plate-card h3 { font-size: 23px; margin-bottom: 14px; }
-.plate-card p { font-size: 14.5px; line-height: 1.7; flex: 1; text-transform: none; }
-.plate-bars { display: flex; gap: 5px; margin-top: 20px; height: 44px; align-items: flex-end; }
-.plate-bars span { flex: 1; border-radius: 3px 3px 0 0; background: var(--pc-accent, var(--green)); opacity: 0.75; }
-.plate-bars span:nth-child(1) { height: 55%; }
-.plate-bars span:nth-child(2) { height: 85%; }
-.plate-bars span:nth-child(3) { height: 40%; }
-.plate-bars span:nth-child(4) { height: 100%; }
-.plate-bars span:nth-child(5) { height: 65%; }
+.bay-panel { display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 440px; }
+.bay-panel-icon {
+  width: 60px; height: 60px; border-radius: 16px;
+  background: rgba(var(--paper-rgb), 0.5);
+  border: 1px solid var(--border-2);
+  color: var(--bay-accent, var(--green));
+  display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+}
+.bay-panel-index { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--bay-accent, var(--green)); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+.bay-panel h3 { font-size: 23px; margin-bottom: 12px; }
+.bay-panel p { font-size: 15px; line-height: 1.7; text-transform: none; }
+.bay-panel-bars { display: flex; gap: 5px; margin-top: 22px; height: 32px; align-items: flex-end; }
+.bay-panel-bars span { width: 8px; border-radius: 3px 3px 0 0; background: var(--bay-accent, var(--green)); opacity: 0.75; }
+.bay-panel-bars span:nth-child(1) { height: 55%; }
+.bay-panel-bars span:nth-child(2) { height: 85%; }
+.bay-panel-bars span:nth-child(3) { height: 40%; }
+.bay-panel-bars span:nth-child(4) { height: 100%; }
+.bay-panel-bars span:nth-child(5) { height: 65%; }
 
-@media (max-width: 700px) {
-  .vehicles-pin { height: auto; }
-  .vehicles-track { position: static; padding: 0 20px 8px; overflow-x: auto; scroll-snap-type: x mandatory; }
-  .plate-card { scroll-snap-align: start; height: auto; min-height: 320px; }
+@media (max-width: 560px) {
+  .bay-tabs { gap: 8px; }
+  .bay-tab { padding: 9px 14px 11px; font-size: 11.5px; }
+  .bay-stage { padding: 34px 22px; }
 }
 
 /* ============================================================
