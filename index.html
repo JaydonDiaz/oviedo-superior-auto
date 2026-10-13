@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  </script>
+  <script src="js/theme.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oviedo Superior Auto | ASE-Certified Auto &amp; Truck Repair</title>
+  <meta name="description" content="Oviedo Superior Auto is a family-owned, ASE-certified auto and truck repair shop in downtown Oviedo, FL — honest diagnostics and factory-level care for foreign and domestic vehicles since 2001.">
+  <link rel="icon" type="image/png" href="images/shop/logo.png">
+  <link rel="apple-touch-icon" href="images/shop/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== ICON SPRITE ===== -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+  </symbol>
+  <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+  </symbol>
+  <symbol id="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 12h14M13 6l6 6-6 6"/>
+  </symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 13l4 4L19 7"/>
+  </symbol>
+  <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 6l12 12M18 6L6 18"/>
+  </symbol>
+  <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7z"/>
+  </symbol>
+  <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+  </symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </symbol>
+  <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+  </symbol>
+  <symbol id="icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+  </symbol>
+  <symbol id="icon-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2.5c3.5 4.5 7 8.6 7 12.5a7 7 0 0 1-14 0c0-3.9 3.5-8 7-12.5z"/>
+  </symbol>
+  <symbol id="icon-disc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M21 12h-3M6 12H3"/>
+  </symbol>
+  <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+  </symbol>
+  <symbol id="icon-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 12l5-5"/><path d="M12 2v2M22 12h-2M4.2 4.2l1.4 1.4"/>
+  </symbol>
+  <symbol id="icon-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1 3h13v13H1z"/><path d="M14 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="1.8"/><circle cx="17.5" cy="18.5" r="1.8"/>
+  </symbol>
+  <symbol id="icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V4"/><path d="M9 12l2 2 4-4"/>
+  </symbol>
+  <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2 4 5v6c0 5 3.4 9 8 11 4.6-2 8-6 8-11V5z"/><path d="M9 12l2 2 4-4"/>
+  </symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </symbol>
+  <symbol id="icon-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.59 13.41 11 4H4v7l9.59 9.59a2 2 0 0 0 2.82 0l4.18-4.18a2 2 0 0 0 0-2.82z"/><circle cx="8" cy="8" r="1.2"/>
+  </symbol>
+</svg>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="nav-logo">
+      <img src="images/shop/logo.png" alt="Oviedo Superior Auto" class="nav-logo-img">
+      <span class="nav-logo-text"><span>Downtown Oviedo, FL</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#inspection" class="nav-link">The Inspection</a>
+      <a href="#vehicles" class="nav-link">What We Service</a>
+      <a href="#why" class="nav-link">Why Us</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#visit" class="nav-link">Visit</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#appointment" class="btn btn-primary btn-sm">Schedule Service</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+        <svg class="icon-sun" width="17" height="17"><use href="#icon-sun"/></svg>
+        <svg class="icon-moon" width="17" height="17"><use href="#icon-moon"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#services" class="mobile-link">Services</a></li>
+    <li><a href="#inspection" class="mobile-link">The Inspection</a></li>
+    <li><a href="#vehicles" class="mobile-link">What We Service</a></li>
+    <li><a href="#why" class="mobile-link">Why Us</a></li>
+    <li><a href="#reviews" class="mobile-link">Reviews</a></li>
+    <li><a href="#visit" class="mobile-link">Visit</a></li>
+  </ul>
+  <a href="#appointment" class="btn btn-primary btn-full" style="margin-bottom:10px;">Schedule Service</a>
+  <button class="theme-toggle theme-toggle-mobile" id="theme-toggle-mobile" type="button" aria-label="Toggle light and dark theme">
+    <svg class="icon-sun" width="17" height="17"><use href="#icon-sun"/></svg>
+    <svg class="icon-moon" width="17" height="17"><use href="#icon-moon"/></svg>
+    <span class="theme-label-dark">Daytime Mode</span>
+    <span class="theme-label-light">Night Shift Mode</span>
+  </button>
+</div>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero-grid-lines" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <div class="hero-badges">
+          <span class="hero-badge"><svg width="13" height="13"><use href="#icon-shield"/></svg> ASE-Certified Technicians</span>
+          <span class="hero-badge">Est. 2001 &middot; Downtown Oviedo</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="hero-title-line">Superior Service.</span>
+          <span class="hero-title-line hero-title-accent">Built to Last.</span>
+        </h1>
+        <p class="hero-sub">Family-owned and independently run in downtown Oviedo since 2001 — honest diagnostics and factory-level care for foreign and domestic cars and trucks, from a crew that explains the work before they start it.</p>
+        <div class="hero-actions">
+          <a href="#appointment" class="btn btn-primary btn-lg">Schedule Service <svg width="15" height="15"><use href="#icon-arrow"/></svg></a>
+          <a href="tel:+14079713690" class="btn btn-outline btn-lg"><svg width="15" height="15"><use href="#icon-phone"/></svg> (407) 971-3690</a>
+        </div>
+      </div>
+      <div class="gauge-cluster" aria-hidden="true">
+        <div class="gauge">
+          <div class="gauge-ring" style="--accent:var(--green);">
+            <div class="gauge-face">
+              <span class="gauge-value" data-gauge-count="25">0</span><span class="gauge-suffix">+</span>
+            </div>
+          </div>
+          <p class="gauge-label">Years Open</p>
+        </div>
+        <div class="gauge gauge--lg">
+          <div class="gauge-ring" style="--accent:var(--steel);">
+            <div class="gauge-face">
+              <span class="gauge-value" data-gauge-count="5" data-gauge-decimal="1">0</span>
+            </div>
+          </div>
+          <p class="gauge-label">Google Rating</p>
+        </div>
+        <div class="gauge">
+          <div class="gauge-ring" style="--accent:var(--green);">
+            <div class="gauge-face">
+              <span class="gauge-value" data-gauge-count="100">0</span><span class="gauge-suffix">%</span>
+            </div>
+          </div>
+          <p class="gauge-label">ASE Certified</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES TICKER ===== -->
+  <div class="marquee-strip">
+    <div class="marquee-track" id="marquee-track"></div>
+  </div>
+
+  <!-- ===== STATS ===== -->
+  <section class="section-padding stats-section">
+    <div class="container">
+      <div class="stats-strip reveal-up">
+        <div class="stat">
+          <div class="stat-num" data-count="25">0</div><span class="stat-plus">+</span>
+          <p class="stat-label">Years in Downtown Oviedo</p>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-count="1000">0</div><span class="stat-plus">+</span>
+          <p class="stat-label">Vehicles Serviced Every Year</p>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-count="20">0</div>
+          <p class="stat-label">Point Multi-Inspection</p>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-count="100">0</div><span class="stat-plus">%</span>
+          <p class="stat-label">ASE-Certified Technicians</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THE INSPECTION + SERVICES ===== -->
+  <section class="section-padding" id="inspection" style="padding-top:0;">
+    <div class="container">
+      <div class="inspect-split">
+        <div class="inspect-copy reveal-up">
+          <p class="eyebrow">The Inspection</p>
+          <h2 class="section-title">Nothing fixed you<br>didn't ask for.</h2>
+          <p class="section-sub">Every vehicle gets a full multi-point inspection before we touch a wrench. You'll know exactly what's wrong, what it costs, and why — before we start.</p>
+          <ul class="inspect-points">
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg> Written estimate before any work begins</li>
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg> Old parts shown to you on request</li>
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg> Factory-spec service, foreign or domestic</li>
+          </ul>
+          <a href="#appointment" class="btn btn-primary">Schedule an Inspection</a>
+        </div>
+        <div class="ticket-demo reveal-up" aria-hidden="true">
+          <div class="service-ticket">
+            <div class="service-ticket-head">
+              <span>WORK ORDER</span>
+              <span class="service-ticket-num">#SA-2026-0442</span>
+            </div>
+            <ul class="service-ticket-items" id="ticket-items"></ul>
+            <div class="service-ticket-foot">Multi-point inspection &middot; no charge</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="services" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header center reveal-up">
+        <p class="eyebrow">In the Shop</p>
+        <h2 class="section-title">Four services that<br>bring people back.</h2>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-card-icon"><svg width="22" height="22"><use href="#icon-drop"/></svg></div>
+          <h3>Oil &amp; Fluid Service</h3>
+          <p>Factory-spec fluids and filters, logged and tracked so you always know what's due next.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><svg width="22" height="22"><use href="#icon-disc"/></svg></div>
+          <h3>Brake Repair</h3>
+          <p>Pads, rotors, and lines inspected and replaced to spec — never upsold past what you need.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><svg width="22" height="22"><use href="#icon-gear"/></svg></div>
+          <h3>Transmission Service</h3>
+          <p>Diagnostics and fluid service for automatic and manual transmissions, foreign or domestic.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><svg width="22" height="22"><use href="#icon-gauge"/></svg></div>
+          <h3>Tune-Ups &amp; Diagnostics</h3>
+          <p>Computerized diagnostics paired with real experience — we chase the actual problem, not the code.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT WE SERVICE (pinned horizontal scroll) ===== -->
+  <section class="vehicles-section" id="vehicles">
+    <div class="container vehicles-head reveal-up">
+      <p class="eyebrow">What We Service</p>
+      <h2 class="section-title">Six kinds of vehicles,<br>one honest shop.</h2>
+    </div>
+    <div class="vehicles-pin">
+      <div class="vehicles-track" id="vehicles-track">
+        <div class="plate-card" style="--pc-accent:var(--green);">
+          <span class="plate-index">01</span>
+          <h3>Domestic Cars &amp; Trucks</h3>
+          <p>Ford, Chevy, Dodge, and more — serviced to the manufacturer's own spec sheet.</p>
+          <div class="plate-bars"><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="plate-card" style="--pc-accent:var(--steel);">
+          <span class="plate-index">02</span>
+          <h3>Foreign &amp; Import</h3>
+          <p>Honda, Toyota, BMW, VW, and other imports — the same factory-level care, no dealer markup.</p>
+          <div class="plate-bars"><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="plate-card" style="--pc-accent:var(--green);">
+          <span class="plate-index">03</span>
+          <h3>Commercial &amp; Fleet</h3>
+          <p>Work trucks and small fleets kept on the road with scheduled, documented maintenance.</p>
+          <div class="plate-bars"><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="plate-card" style="--pc-accent:var(--steel);">
+          <span class="plate-index">04</span>
+          <h3>Brakes &amp; Suspension</h3>
+          <p>Pads, rotors, shocks, and struts — the parts that decide how a vehicle actually feels to drive.</p>
+          <div class="plate-bars"><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="plate-card" style="--pc-accent:var(--green);">
+          <span class="plate-index">05</span>
+          <h3>Transmission &amp; Drivetrain</h3>
+          <p>Automatic and manual transmissions, clutches, and drivetrain components, diagnosed right.</p>
+          <div class="plate-bars"><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="plate-card" style="--pc-accent:var(--steel);">
+          <span class="plate-index">06</span>
+          <h3>Factory Maintenance</h3>
+          <p>Scheduled maintenance intervals done to spec, so your warranty stays intact.</p>
+          <div class="plate-bars"><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="section-padding" id="why">
+    <div class="container">
+      <div class="section-header center reveal-up">
+        <p class="eyebrow">Why Oviedo Trusts Us</p>
+        <h2 class="section-title">Twenty-five years of<br>showing our work.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-card-icon"><svg width="20" height="20"><use href="#icon-users"/></svg></div>
+          <h3>Family-Owned Since 2001</h3>
+          <p>Independently run in downtown Oviedo for 25 years — not a chain, not a franchise.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon"><svg width="20" height="20"><use href="#icon-shield"/></svg></div>
+          <h3>ASE-Certified Technicians</h3>
+          <p>Trained and tested to the same standard dealerships hold their own techs to.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon"><svg width="20" height="20"><use href="#icon-tag"/></svg></div>
+          <h3>Honest, Upfront Pricing</h3>
+          <p>A written estimate before anything happens — no surprise line items at pickup.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon"><svg width="20" height="20"><use href="#icon-truck"/></svg></div>
+          <h3>Cars &amp; Trucks, Any Make</h3>
+          <p>Foreign or domestic, daily driver or work truck — one shop that services all of it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section-padding reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header center reveal-up">
+        <p class="eyebrow">Word Around Oviedo</p>
+        <h2 class="section-title">What customers say.</h2>
+      </div>
+      <div class="review-grid">
+        <div class="review-card reveal-up">
+          <div class="review-stars"><svg width="14" height="14"><use href="#icon-star"/></svg><svg width="14" height="14"><use href="#icon-star"/></svg><svg width="14" height="14"><use href="#icon-star"/></svg><svg width="14" height="14"><use href="#icon-star"/></svg><svg width="14" height="14"><use href="#icon-star"/></svg></div>
+          <p>"Showed me the old brake pads next to the new ones so I could actually see the difference. Never had a shop do that before."</p>
+          <span class="review-name">DAVID R.</span>
+        </div>
+        <div class="review-card reveal-up">
+          <div class="review-stars"><svg width="14" height="14"><use href="#icon-star"/></svg><svg width="14" height="14"><use href="#icon-star"/></svg><svg width="14" height="14"><use href="#icon-star"/></svg><svg width="14" height="14"><use href="#icon-star"/></svg><svg width="14" height="14"><use href="#icon-star"/></svg></div>
+          <p>"Quoted me a price over the phone and that's exactly what I paid. Nineteen years with the same car and I finally found a shop I trust."</p>
+          <span class="review-name">LINDA M.</span>
+        </div>
+        <div class="review-card reveal-up">
+          <div class="review-stars"><svg width="14" height="14"><use href="#icon-star"/></svg><svg width="14" height="14"><use href="#icon-star"/></svg><svg width="14" height="14"><use href="#icon-star"/></svg><svg width="14" height="14"><use href="#icon-star"/></svg><svg width="14" height="14"><use href="#icon-star"/></svg></div>
+          <p>"Our work trucks don't have time to sit around. They get us diagnosed and back on the road same-day, every time."</p>
+          <span class="review-name">MARCUS T.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VISIT US ===== -->
+  <section class="section-padding visit-section" id="visit">
+    <div class="container">
+      <div class="section-header center reveal-up">
+        <p class="eyebrow">Visit the Shop</p>
+        <h2 class="section-title">84 Geneva Dr, Oviedo.</h2>
+      </div>
+      <div class="visit-grid">
+        <div class="visit-info reveal-up">
+          <div class="visit-status">
+            <span class="visit-status-dot" id="status-dot"></span>
+            <span id="status-text">Checking hours&hellip;</span>
+          </div>
+          <table class="hours-table">
+            <tbody>
+              <tr data-day="1"><td>Monday</td><td>8:00 AM – 6:00 PM</td></tr>
+              <tr data-day="2"><td>Tuesday</td><td>8:00 AM – 6:00 PM</td></tr>
+              <tr data-day="3"><td>Wednesday</td><td>8:00 AM – 6:00 PM</td></tr>
+              <tr data-day="4"><td>Thursday</td><td>8:00 AM – 6:00 PM</td></tr>
+              <tr data-day="5"><td>Friday</td><td>8:00 AM – 6:00 PM</td></tr>
+              <tr data-day="6"><td>Saturday</td><td>Closed</td></tr>
+              <tr data-day="0"><td>Sunday</td><td>Closed</td></tr>
+            </tbody>
+          </table>
+          <div class="visit-detail"><svg width="16" height="16"><use href="#icon-pin"/></svg> 84 Geneva Dr, Oviedo, FL 32765</div>
+          <div class="visit-detail"><svg width="16" height="16"><use href="#icon-phone"/></svg> (407) 971-3690</div>
+          <div class="visit-actions">
+            <a href="https://maps.google.com/?q=84+Geneva+Dr,+Oviedo,+FL+32765" target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
+            <a href="tel:+14079713690" class="btn btn-outline">Call the Shop <svg width="13" height="13"><use href="#icon-phone"/></svg></a>
+          </div>
+        </div>
+        <div class="map-frame reveal-up">
+          <iframe src="https://www.google.com/maps?q=84+Geneva+Dr,+Oviedo,+FL+32765&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Oviedo Superior Auto"></iframe>
+        </div>
+      </div>
+
+      <div class="appt-form-wrap reveal-up" id="appointment">
+        <div class="appt-form-head">
+          <p class="eyebrow">Schedule Service</p>
+          <h3>Tell us about your vehicle.</h3>
+        </div>
+        <form id="appt-signup-form" class="appt-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="af-name">Name</label>
+              <input type="text" id="af-name" name="name" placeholder="Your name">
+              <span class="field-error" id="af-name-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="af-contact">Phone or Email</label>
+              <input type="text" id="af-contact" name="contact" placeholder="How should we reach you?">
+              <span class="field-error" id="af-contact-error"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="af-vehicle">Year, Make &amp; Model</label>
+              <input type="text" id="af-vehicle" name="vehicle" placeholder="e.g. 2018 Honda Accord">
+            </div>
+            <div class="form-group">
+              <label for="af-date">Preferred Date</label>
+              <input type="text" id="af-date" name="date" placeholder="When works for you?">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="af-notes">What's going on with it?</label>
+            <textarea id="af-notes" name="notes" rows="3" placeholder="Noise, warning light, routine service — whatever you've got."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Request Appointment</button>
+        </form>
+        <div class="form-success hidden" id="appt-success">
+          <svg width="20" height="20"><use href="#icon-check"/></svg>
+          <span>Got it — we'll call to confirm a time that works for you.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="images/shop/logo.png" alt="Oviedo Superior Auto" class="footer-logo-img">
+          </div>
+          <p>Family-owned, ASE-certified auto and truck repair in downtown Oviedo, FL. Open since 2001.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Explore</div>
+          <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#inspection">The Inspection</a>
+            <a href="#vehicles">What We Service</a>
+            <a href="#reviews">Reviews</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Shop</div>
+          <div class="footer-links">
+            <a href="#appointment">Schedule Service</a>
+            <a href="#why">Why Us</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Visit</div>
+          <div class="footer-links">
+            <span>84 Geneva Dr</span>
+            <span>Oviedo, FL 32765</span>
+            <a href="tel:+14079713690">(407) 971-3690</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Oviedo Superior Auto.</span>
+        <span>Portfolio redesign concept — not the official site.</span>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
